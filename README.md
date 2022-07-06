@@ -135,4 +135,79 @@ The Plugin has the following 4 functions:
     └── renameNeuron0to2_r_t03z07.tif
 
 ```
+#### Organization Example C: 
+##### Set-up for Organize:
 
+```bash
+├── Analysis
+├── CalciumImaging1
+│   ├── Neuron0to2
+│   	├── Neuron0to2_h01t01z01c2.tif
+│   	├── Neuron0to2_h01t01z02c2.tif
+│   	├── Neuron0to2_h01t01z03c2.tif
+│   	├── Neuron0to2_h01t01z04c2.tif
+│   	├── Neuron0to2_h01t01z05c2.tif
+│   	├── Neuron0to2_h01t01z06c2.tif
+│   	├── Neuron0to2_h01t01z07c2.tif
+│   	├── Neuron0to2_h01t02z01c2.tif
+│   	├── Neuron0to2_h01t02z02c2.tif
+│   	├── Neuron0to2_h01t02z03c2.tif
+│   	├── Neuron0to2_h01t02z04c2.tif
+│   	├── Neuron0to2_h01t02z05c2.tif
+│   	├── Neuron0to2_h01t02z06c2.tif
+│   	├── Neuron0to2_h01t01z07c2.tif
+│   	├── Neuron0to2_h01t03z01c2.tif
+│   	├── Neuron0to2_h01t03z02c2.tif
+│   	├── Neuron0to2_h01t03z03c2.tif
+│   	├── Neuron0to2_h01t03z04c2.tif
+│   	├── Neuron0to2_h01t03z05c2.tif
+│   	├── Neuron0to2_h01t03z06c2.tif
+│       └── Neuron0to2_h01t03z07c2.tif
+├── CalciumImaging2
+│   ├── Neuron3to5
+│   └── params.csv
+└── renameNeuron0to2
+
+```
+
+#### Organization Example D: 
+##### After Organize is executed:
+
+```bash
+├── Analysis
+├── CalciumImaging1
+│   ├── params.csv
+│   ├── Neuron0to2
+│   ├── Neuron0to2_gray_stacks
+│       ├── Neuron0to2_1
+│       │   ├── Neuron0to2_h01t01z01c2.tif
+│       │   ├── Neuron0to2_h01t02z01c2.tif
+│       │   └── Neuron0to2_h01t03z01c2.tif
+│       ├──  Neuron0to2_2
+│       │   ├── Neuron0to2_h01t01z02c2.tif
+│       │   ├── Neuron0to2_h01t02z02c2.tif
+│       │   └── Neuron0to2_h01t03z02c2.tif
+│       ├── Neuron0to2_3
+│       │   ├── Neuron0to2_h01t01z03c2.tif
+│       │   ├── Neuron0to2_h01t02z03c2.tif
+│       │   └── Neuron0to2_h01t03z03c2.tif
+│       ├── Neuron0to2_4
+│       │   ├── Neuron0to2_h01t01z04c2.tif
+│       │   ├── Neuron0to2_h01t02z04c2.tif
+│       │   └── Neuron0to2_h01t03z04c2.tif
+│       ├── Neuron0to2_5
+│       │   ├── Neuron0to2_h01t01z05c2.tif
+│       │   ├── Neuron0to2_h01t02z05c2.tif
+│       │   └── Neuron0to2_h01t03z05c2.tif
+│       ├── Neuron0to2_6
+│       │   ├── Neuron0to2_h01t01z06c2.tif
+│       │   ├── Neuron0to2_h01t02z06c2.tif
+│       │   └── Neuron0to2_h01t03z06c2.tif
+│       └── Neuron0to2_7
+│           ├── Neuron0to2_h01t01z07c2.tif
+│           ├── Neuron0to2_h01t02z07c2.tif
+│           └── Neuron0to2_h01t03z07c2.tif
+├── CalciumImaging2
+└── renameNeuron0to2
+
+```
