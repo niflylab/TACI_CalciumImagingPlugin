@@ -54,12 +54,13 @@ The Plugin has the following 4 functions:
 ## Input and Output File Organization
 ### Rename and Organize File Organization Example A-D
 
-1) Organize uses the Zeiss confocal file structure. Therefore, the files in the folder will have the same name as the folder with “_h#t#z#c#.tif”, (where the # stands for a number) at the end of each file to identify the phase (h#), time point (t#), z-position (z#), and channel (c#) of each file. In order for Organize to work, the original name of the folder must be kept, or if changed, the file folder name must be identical to the beginning of each file.
+1) The file folder name must be identical to the beginning of each file name.
+- Organize uses the Zeiss confocal file structure. Therefore, the files in the folder will have the same name as the folder with “_h#t#z#c#.tif”, (where the # stands for a number) at the end of each file to identify the phase (h#), time point (t#), z-position (z#), and channel (c#) of each file. In order for Organize to work, the original name of the folder must be kept, or if changed, the file folder name must be identical to the beginning of each file.
 	- For example, in the practice folder, files are saved as “Neuron0to2_h#t#z#c#.tif”, so the folder name is “Neuron0to2”.
   
-2) Using other confocal microscopes that export .tif files:
-	- The files must be exported as .tif. The naming systems are different for Nikon, Leica, Zeiss etc. 
-	- The rename function is applied and the prefix, capitalization, digit count, and post text is defined within the name. Then each file is copied and renamed to be compatible with Organize. For example if a file is exported as **Neuron0to2Z#T#ni.tif**, the rename function would create a copy with the folowing name: **Neuron0to2t#z#.tif** 
+2) Rename must be executed if using other confocal microscopes that export .tif files:
+	- The files must be exported as .tif. 
+	- Since the naming systems are different for Nikon, Leica, Zeiss etc. the rename function is applied and the prefix, capitalization, digit count, and post text is defined within the name. Then each file is copied and renamed to be compatible with Organize. For example if a file is exported as **Neuron0to2Z#T#ni.tif**, the rename function would create a copy with the folowing name: **Neuron0to2t#z#.tif** 
 	- Refer to [Organization Example A](#organization-example-a) for an example of how the files should be structured and [Organization Example B](#organization-example-b) for what the file structure looks like after execution.
 	
 3) The files from the original folder are copied and are saved into a new folder labeled with the file name and _gray_stacks one directory above (outside of the input folder) such that the original folder is never changed. For the example in Practice > CalciumImaging1 > Neuron0to2:
@@ -70,7 +71,68 @@ The Plugin has the following 4 functions:
 		- If the **Are Images grey?** box is unchecked parameter a grayscale function is performed on the copies.
 	- The output folder "Neuron0to2_gray_stacks"the z-position folders named “Neuron0to2_1”, “Neuron0to2_2” etc. with the sorted gray files.
 	- Refer to [Organization Example C](#organization-example-c) for an example of how the files should be structured and [Organization Example D](#organization-example-d) for what the file structure looks like after execution.
-	
-4) The code turns the files gray if the **Are Images grey?** box is unchecked. 
 
+#### Organization Example A: 
+##### Rename input example:
+
+```bash
+├── Analysis
+├── CalciumImaging1
+├── CalciumImaging2
+└── renameNeuron0to2
+    ├── renameNeuron0to2Z01T01ni.tif
+    ├── renameNeuron0to2Z01T02ni.tif
+    ├── renameNeuron0to2Z01T03ni.tif
+    ├── renameNeuron0to2Z02T01ni.tif
+    ├── renameNeuron0to2Z02T02ni.tif
+    ├── renameNeuron0to2Z02T03ni.tif
+    ├── renameNeuron0to2Z03T01ni.tif
+    ├── renameNeuron0to2Z03T02ni.tif
+    ├── renameNeuron0to2Z03T03ni.tif
+    ├── renameNeuron0to2Z04T01ni.tif
+    ├── renameNeuron0to2Z04T02ni.tif
+    ├── renameNeuron0to2Z04T03ni.tif
+    ├── renameNeuron0to2Z05T01ni.tif
+    ├── renameNeuron0to2Z05T02ni.tif
+    ├── renameNeuron0to2Z05T03ni.tif
+    ├── renameNeuron0to2Z06T01ni.tif
+    ├── renameNeuron0to2Z06T02ni.tif
+    ├── renameNeuron0to2Z06T03ni.tif
+    ├── renameNeuron0to2Z07T01ni.tif
+    ├── renameNeuron0to2Z07T02ni.tif
+    └── renameNeuron0to2Z07T03ni.tif
+
+```
+#### Organization Example B: 
+##### Rename output example:
+
+```bash
+├── Analysis
+├── CalciumImaging1
+├── CalciumImaging2
+├── renameNeuron0to2
+└── renameNeuron0to2_r
+    ├── renameNeuron0to2_r_t01z01.tif
+    ├── renameNeuron0to2_r_t01z02.tif
+    ├── renameNeuron0to2_r_t01z03.tif
+    ├── renameNeuron0to2_r_t01z04.tif
+    ├── renameNeuron0to2_r_t01z05.tif
+    ├── renameNeuron0to2_r_t01z06.tif
+    ├── renameNeuron0to2_r_t01z07.tif
+    ├── renameNeuron0to2_r_t02z01.tif
+    ├── renameNeuron0to2_r_t02z02.tif
+    ├── renameNeuron0to2_r_t02z03.tif
+    ├── renameNeuron0to2_r_t02z04.tif
+    ├── renameNeuron0to2_r_t02z05.tif
+    ├── renameNeuron0to2_r_t02z06.tif
+    ├── renameNeuron0to2_r_t02z07.tif
+    ├── renameNeuron0to2_r_t03z01.tif
+    ├── renameNeuron0to2_r_t03z02.tif
+    ├── renameNeuron0to2_r_t03z03.tif
+    ├── renameNeuron0to2_r_t03z04.tif
+    ├── renameNeuron0to2_r_t03z05.tif
+    ├── renameNeuron0to2_r_t03z06.tif
+    └── renameNeuron0to2_r_t03z07.tif
+
+```
 
