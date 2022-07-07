@@ -206,19 +206,19 @@ The Plugin has the following 4 functions:
 		- This way, the mean intensity values in each z-position can be tracked by replacing the general MEAN_INTENSITY column names with the file name *Mean_Intensity#* in the merged document.
 
 2) The *Mean_Intensity#.csv* files for each neuron should be saved into a folder labeled *Neuron #*, where # stands for the number of the neuron. 
-	- The first neuron in the set is always *Neuron 0*, the second is *Neuron 1* etc. If running only one neuron, label it *Neuron 0*. [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
+	- The first neuron in the set is always *Neuron 0*, the second is *Neuron 1*, etc. If running only one neuron, label it *Neuron 0*. [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
 
 3) A *Background_list.csv* file must be present in the same folder as the *Neuron #* folders. It is automatically filled in the Plugin [Background List File](#background-list-file) shows an example.
-	- The background_list has a column labeled *Neuron #* for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal to the number of *Mean_Intensity#.csv* files in each neuron folder. If they do not, this will lead to an error.
+	- The background_list has a column labeled *Neuron #* for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal the number of *Mean_Intensity#.csv* files in each neuron folder. If they do not, this will lead to an error.
 	- The columns must be in numerical order and must not skip values. Make sure there is no blank space in the header names before or after. For example " Neuron 0" and "Neuron 0 " will give an error. 
 
-4) The EXTRACT function will combine the *MEAN_INTENSITY* columns of the Mean_Intensity#.csv files in each *Neuron #* folder into one file, subtract the background, calculate the maximum intensity for each time point and the change in fluorescence (∆F/F<sub>0</sub>) for that neuron. These will be saved to a *results* folder with the name *Neuron #.csv*. Additionaly a plot for each neuron will be saved in a *Neuron Plots* folder within the *results* folder.
+4) The EXTRACT function will combine the *MEAN_INTENSITY* columns of the Mean_Intensity#.csv files in each *Neuron #* folder into one file, subtract the background, and calculate the maximum intensity for each time point as well as the change in fluorescence (∆F/F<sub>0</sub>) for that neuron. These will be saved to a *results* folder with the name *Neuron #.csv*. Additionally, a plot for each neuron will be saved in a *Neuron Plots* folder within the *results* folder.
 	- The *results* folder is created in the directory where the *Neuron #* folders reside. 
 		- In [Organization Example E](#organization-example-e), the *results* folder would be created in the *Analysis* folder. 
 		- Within the *results* folder, there are the .csv files with the merged mean intensity and the ∆F/F<sub>0</sub> calculation labeled after each neuron. 
 		- There is also a folder called *Neuron Plots* that will have the output plots for each ∆F/F<sub>0</sub> value.
 	- One folder, *Neuron 0* can be run if needed. 
-5) An option to perform MERGE is avaialable. 
+5) An option to perform MERGE is available. 
 6) An example of the inputs for the example Practice > Analysis folder. 
 
 <img width="696" alt="Screen Shot 2022-07-06 at 9 50 38 PM" src="https://user-images.githubusercontent.com/23412608/177673038-87433dfa-6180-4029-9a2f-c1522730c788.png">
@@ -339,18 +339,18 @@ The Plugin has the following 4 functions:
 8) If there are missing files, the function will skip the files and state that files were missing. 
 
 ### ORGANIZE
-1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
-2) Make sure there is no comma in the name. If there is, either edit, or make a params.csv file with the correct filename and proper parameters.
+1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within its enclosing folder.
+2) Make sure there is no comma in the name. If there is, either edit or make a params.csv file with the correct filename and proper parameters.
 3) Make your params.csv is correct.
 4) Make sure you are not missing any files.
 
 ### EXTRACT
-1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
-2) Make sure to change the Number of Number of T Positions to a value in the range of T Positions of your data.
+1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within its enclosing folder.
+2) Make sure to change the Number of T Positions to a value in the range of T Positions in your data.
 3) Make sure the Background_list.csv is correct for this set of data. The number of mean intensity files for each neuron must match the number of values in the corresponding row. 
 4) Make sure there are no spaces before or after "Neuron #". " Neuron #", "Neuron # ", and " Neuron # " will give an error.
 5) Make sure there are no empty values entered.
 
 ### MERGE
-1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
-2) Make sure to change the Number of Number of T Positions to a value in the range of T Positions of your data.
+1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within its enclosing folder.
+2) Make sure to change the Number of T Positions to a value in the range of T Positions of your data.
