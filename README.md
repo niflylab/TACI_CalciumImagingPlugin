@@ -22,12 +22,7 @@ A Plugin for analysis of confocal calcium imaging with sparse cells which are lo
 	- [Background List File](#background-list-file)
 	- [Merging Organization Example G](#merging-organization-example-G)
 		- [Organization Example G](#organization-example-G)
-	
-- [Code Documentation](#code-documentation)
-	- [Sorting](#sorting)
-	- [Fluorescence Extraction](#fluorescence-extraction)
-	- [Merging](#merging)
-
+		
 ---
 ## Installation
 Download the .jar file. Install the plugin in FIJI (Plugins > Install) and restart FIJI. 
