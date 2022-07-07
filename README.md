@@ -71,23 +71,23 @@ The Plugin has the following 4 functions:
 			- File name is automatically filled in from the chosen folder. The order most often is "1"
 			- Phase 
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the preceding text input is _ and the parametere value is "h01". The order would be set to 2.
+				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text = _**, **parameter value = h01**, **order= 2**.
 				- If there is no Phase, the order is set to "Na"
 			- Max T-Position
 				- The preceding text should include any _ and letter with the correct case.
 				- The parameter value should include all digits. 
-				-  For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the t-position preceding text should be *_t* and the parameter value would be *010* with the order set to 3.
+				-  For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max T-position **preceding text= _t**, **parameter value= 010**, **order= 3**.
 			- Max Z-Position
 				- The preceding text should include any _ and letter with the correct case.
 				- The parameter value should include all digits. 
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the z-position preceding text should be *_z* and the parameter value would be *07* with the order be set to 4.
+				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max Z-position **preceding text= _z**, **parameter value= 07**, **order= 4**.
 			- Channel
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the preceding text input is _ and the parameter value is "c2". The order would be set to 5.
+				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text= _**, **parameter value= c2**, **order= 5**.
 				- If there is no Channel, the order is set to "Na"
 			- Post text 
 				- If after the last variable there is text this should be entered here.
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif*, *_ni* should be entered. 
+				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif*, **post text= _ni**. 
 	 - Note:
 		- The inputs are case sensitive. Make sure your case is correct. 
 	- Refer to [Organization Example A](#organization-example-a) for an example of how the files should be structured and [Organization Example B](#organization-example-b) for what the file structure looks like after execution.
