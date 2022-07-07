@@ -63,7 +63,7 @@ The Plugin has the following 4 functions:
 	
 3) The files from the original folder are copied and are saved into a new folder labeled with the file name and _gray_stacks one directory above (outside of the input folder) such that the original folder is never changed. For the example in Practice > CalciumImaging1 > Neuron0to2:
 	- The folder Neuron0to2 should be chosen from the menu without being entered.
-	- If there is a params.csv file, the parameters are automatically read. (Practice > CalciumImaging2 > Neuron3to5 example). 
+	- If there is a params.csv file, the parameters are automatically read. (Practice > CalciumImaging2 > Neuron3to5 example) and is shown as an example in [Params File](#params-file).
 	- If there are no params.csv file, the phase, t-position, z-position, channel, and whether images are already gray must be indicated.
 		- If there is no phase or channel enter **Na**. There must be a numeric input for t-position and z-position. 
 		- If the **Are Images grey?** box is unchecked parameter a grayscale function is performed on the copies.
@@ -230,9 +230,9 @@ The Plugin has the following 4 functions:
 		- This way, the mean intensity values in each z-position can be tracked by replacing the general MEAN_INTENSITY column names with the file name “Mean_Intensity#” in the merged document.
 
 2) The “Mean_Intensity#.csv” files for each neuron should be saved into a folder labeled “Neuron #”, where # stands for the number of the neuron. 
-	- The first neuron in the set is always “Neuron 0”, the second is “Neuron 1” etc. If running only one neuron, label it "Neuron 0" [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
+	- The first neuron in the set is always “Neuron 0”, the second is “Neuron 1” etc. If running only one neuron, label it "Neuron 0". [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
 
-3) A “Background_list.csv” file must be present in the same folder as the “Neuron #” folders. 
+3) A “Background_list.csv” file must be present in the same folder as the “Neuron #” folders. [Background List File](#background-list-file) shows an example.
 	- The background_list has a column labeled “Neuron #” for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal to the number of “Mean_Intensity#.csv” files in each neuron folder. If they do not, this will lead to an error.
 	- The columns must be in numerical order and must not skip values. Make sure there is no blank space in the header names before or after. For example " Neuron 0" and "Neuron 0 " will give an error. 
 
@@ -329,7 +329,7 @@ The Plugin has the following 4 functions:
  ----------------
 
 ### Merging Organization Example G
-1) The Merge function combines all the ∆F/F<sub>0</sub> columns from the “Neuron #.csv” files into one file and renames each column to match the “Neuron #.csv” file it came from. It then calculates the average and SEM of the ∆F/F<sub>0</sub> columns. The file is named “merged_data.csv” and is saved into a new “merged_data” folder within the "results" folder.
+1) The Merge function combines all the ∆F/F<sub>0</sub> columns from the “Neuron #.csv” files into one file and renames each column to match the “Neuron #.csv” file it came from. It then calculates the average and SEM of the ∆F/F<sub>0</sub> columns. The file is named “merged_data.csv” and is saved into a new “merged_data” folder within the "results" folder as is shown in [Organization Example G](#organization-example-g).
 2) The code also creates and saves a graph named Average_dF_F0.png which plots the average ∆F/F<sub>0</sub> with the position T into the “merged_data” folder. 
 3) All the “Neuron #.csv” files have to be in the same folder so the ∆F/F<sub>0</sub> of each neuron can be averaged and plotted.
 
