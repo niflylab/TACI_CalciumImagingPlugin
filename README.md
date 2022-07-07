@@ -31,15 +31,15 @@ Download the .jar file. Install the plugin in FIJI (Plugins > Install) and resta
 The Plugin has the following 4 functions:
 
 ***RENAME*:**
-- Creates a copy of the files and changes the file name to a format compatible with ORGANIZE in a new folder with _r added. 
+- Creates a copy of the files and changes the file name to a format compatible with ORGANIZE in a new folder with _r added. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example A](#organization-example-a).
 - An option to perform ORGANIZE simultaneously is available.
 
 ***ORGANIZE*:**
-- Makes a copy of the .tif files and sorts them into folders labeled by the z-positions. 
+- Makes a copy of the .tif files and sorts them into folders labeled by the z-positions. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example C](#organization-example-c).
 - An option to make the .tif gray is available.
 
 ***EXTRACT*:**
-- Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. his requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
+- Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
 - Subtracts the background and finds the maximal value for each timepoint. 
 - Calculates the change in fluorescence (∆F/F<sub>0</sub>) and plots the ∆F/F<sub>0</sub> over time.
 - Outputs the .csv files with the combined data and calculations, and a "Neuron Plots" folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the "results" folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-f).
