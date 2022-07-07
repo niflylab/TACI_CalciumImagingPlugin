@@ -1,4 +1,4 @@
-# TACI_CalciumImagingPlugin
+# TACI Calcium Imaging Plugin
 A Plugin for analysis of confocal calcium imaging with sparse cells which are located in multiple z-positions.
 
 ---
@@ -248,6 +248,7 @@ The Plugin has the following 4 functions:
 		- Within the “results” folder, there are the .csv files with the merged mean intensity and the ∆F/F<sub>0</sub> calculation labeled after each neuron. 
 		- There is also a folder called “Neuron Plots” that will have the output plots for each ∆F/F<sub>0</sub> value.
 	- One folder, "Neuron 0" can be run if needed. 
+5) An option to perform Merge is avaialable. 
 
 #### Organization Example E: 
 ##### Set-up for Extract
@@ -264,6 +265,20 @@ The Plugin has the following 4 functions:
 │   │   ├── Mean_Intensity_06.csv
 │   │   └── Mean_Intensity_07.csv
 │   └── Neuron 2
+│   │   ├── Mean_Intensity_04.csv
+│   │   ├── Mean_Intensity_05.csv
+│   │   ├── Mean_Intensity_06.csv
+│   │   └── Mean_Intensity_07.csv
+│   ├── Neuron 3
+│   │   ├── Mean_Intensity_01.csv
+│   │   ├── Mean_Intensity_02.csv
+│   │   └── Mean_Intensity_03.csv
+│   ├── Neuron 4
+│   │   ├── Mean_Intensity_04.csv
+│   │   ├── Mean_Intensity_05.csv
+│   │   ├── Mean_Intensity_06.csv
+│   │   └── Mean_Intensity_07.csv
+│   └── Neuron 5
 │       ├── Mean_Intensity_04.csv
 │       ├── Mean_Intensity_05.csv
 │       ├── Mean_Intensity_06.csv
@@ -281,14 +296,23 @@ The Plugin has the following 4 functions:
 │   ├── Neuron 0
 │   ├── Neuron 1
 │   ├── Neuron 2
+│   ├── Neuron 3
+│   ├── Neuron 4
+│   ├── Neuron 5
 │   └── results
 │       ├── Neuron 0.csv
 │       ├── Neuron 1.csv
 │       ├── Neuron 2.csv
+│       ├── Neuron 3.csv
+│       ├── Neuron 4.csv
+│       ├── Neuron 5.csv
 │       └── Neuron Plots
 │           ├── Neuron 0.png
 │           ├── Neuron 1.png
-│           └── Neuron 2.png
+│           ├── Neuron 2.png
+│           ├── Neuron 3.png
+│           ├── Neuron 4.png
+│           └── Neuron 5.png
 ├── CalciumImaging1
 ├── CalciumImaging2
 └── renameNeuron0to2
@@ -309,3 +333,35 @@ The Plugin has the following 4 functions:
 			|2.335       |  0.430       |  0.430       |2.335       |  0.430       |  0.430       |
 			|            |  0.297       |  0.297       |            |  0.297       |  0.297       |
  ----------------
+
+### Merging Organization Example G
+1) The Merge function combines all the ∆F/F<sub>0</sub> columns from the “Neuron #.csv” files into one file and renames each column to match the “Neuron #.csv” file it came from. It then calculates the average and SEM of the ∆F/F<sub>0</sub> columns. The file is named “merged_data.csv” and is saved into a new “merged_data” folder within the "results" folder.
+2) The code also creates and saves a graph named Average_dF_F0.png which plots the average ∆F/F<sub>0</sub> with the position T into the “merged_data” folder. 
+3) All the “Neuron #.csv” files have to be in the same folder so the ∆F/F<sub>0</sub> of each neuron can be averaged and plotted.
+
+#### Organization Example G: 
+##### After merge_data() is executed:
+
+``` bash
+├── Analysis
+│   ├── Background_list.csv
+│   ├── Neuron 0
+│   ├── Neuron 1
+│   ├── Neuron 2
+│   ├── Neuron 3
+│   ├── Neuron 4
+│   ├── Neuron 5
+│   └── results
+│       ├── merged_data
+│       │   ├── Average_dF_F0.png
+│       │   └── merged_data.csv
+│       ├── Neuron 0.csv
+│       ├── Neuron 1.csv
+│       ├── Neuron 2.csv
+│       ├── Neuron 3.csv
+│       ├── Neuron 4.csv
+│       ├── Neuron 5.csv
+│       └── Neuron Plots
+├── Neuron0to2
+└── Neuron0to2_gray_stacks
+```  
