@@ -52,7 +52,7 @@ The Plugin has the following 4 functions:
 ## Input and Output File Organization
 ### RENAME and ORGANIZE Organization Example A through D
 
-1) The file folder name must be identical to the beginning of each file name. [Organization Example C](#organization-example-c) shows the input structure necessary. Note, if there is a comma in the name, the files must be renamed to not include one. Alternatively, a params.csv file (see [Params file](#params_file)) could be created to avert this issue. 
+1) The file folder name must be identical to the beginning of each file name. [Organization Example C](#organization-example-c) shows the input structure necessary. Note, if there is a comma in the name, the files must be renamed to not include one. 
 - ORGANIZE uses the Zeiss confocal file structure. Therefore, the files in the folder will have the same name as the folder with *_h#t#z#c#.tif*, (where the # stands for a number) at the end of each file to identify the phase (h#), time point (t#), z-position (z#), and channel (c#) of each file. In order for ORGANIZE to work, the original name of the folder must be kept, or if changed, the file folder name must be identical to the beginning of each file.
 	- For example, in the practice folder, files are saved as *Neuron0to2_h#t#z#c#.tif*, so the folder name is *Neuron0to2*.
 	
