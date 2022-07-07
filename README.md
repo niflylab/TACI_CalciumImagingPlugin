@@ -61,7 +61,7 @@ The Plugin has the following 4 functions:
 
 2) RENAME must be executed if the file name does not match Zeiss file structure for .tif files:
 	- The files must be exported as .tif. 
-	- This function needs an input and order for all parts of a name in order to recognize the file. T
+	- This function needs an input and order for all parts of a name in order to recognize the files.
 		- The filename, prefix, capitalization, digit count, post text, and order within the name of each variable are defined through the parameters. 
 		- Then each file is copied and renamed to be compatible with ORGANIZE. As an example, Practice > renameNeuron0to2. These files are exported as *renameNeuron0to2Z#T#ni.tif*. The rename function would create a copy with the following name: *Neuron0to2_r_t#z#.tif*. See [Organization Example A](#organization-example-a) and [Organization Example B](#organization-example-b).
 		- To follow this example, these are the inputs for the RENAME function.
