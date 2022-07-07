@@ -14,11 +14,15 @@ A Plugin for analysis of confocal calcium imaging with sparse cells which are lo
 	- [Organize Organization Example C and D](#fluorescence-extraction-organization-example-c-and-d)
 		- [Organization Example C](#organization-example-c)
 		- [Organization Example D](#organization-example-d)
+	- [Params File](#params-file)
 	- [Extract Organization Example E](#merging-organization-example-e)
 		- [Organization Example E](#organization-example-e)
+	- [Extract Organization Example E](#merging-organization-example-e)
+		- [Organization Example E](#organization-example-e)
+	- [Background List File](#background-list-file)
 	- [Merging Organization Example F](#merging-organization-example-f)
 		- [Organization Example F](#organization-example-f)
-	- [Background List File](#background-list-file)
+	
 - [Code Documentation](#code-documentation)
 	- [Sorting](#sorting)
 	- [Fluorescence Extraction](#fluorescence-extraction)
@@ -69,6 +73,8 @@ The Plugin has the following 4 functions:
 	- If there are no params.csv file, the phase, t-position, z-position, channel, and whether images are already gray must be indicated.
 		- If there is no phase or channel enter **Na**. There must be a numeric input for t-position and z-position. 
 		- If the **Are Images grey?** box is unchecked parameter a grayscale function is performed on the copies.
+		- After running the Organize function, a params.csv file will be made, such that future runs have parameters filled in.
+			-If parameters need to be changed, the created params.csv file must be deleted for changes to apply.  	
 	- The output folder "Neuron0to2_gray_stacks"the z-position folders named “Neuron0to2_1”, “Neuron0to2_2” etc. with the sorted gray files.
 	- Refer to [Organization Example C](#organization-example-c) for an example of how the files should be structured and [Organization Example D](#organization-example-d) for what the file structure looks like after execution.
 
@@ -141,7 +147,7 @@ The Plugin has the following 4 functions:
 ```bash
 ├── Analysis
 ├── CalciumImaging1
-│   ├── Neuron0to2
+│   └── Neuron0to2
 │   	├── Neuron0to2_h01t01z01c2.tif
 │   	├── Neuron0to2_h01t01z02c2.tif
 │   	├── Neuron0to2_h01t01z03c2.tif
@@ -178,7 +184,7 @@ The Plugin has the following 4 functions:
 ├── CalciumImaging1
 │   ├── params.csv
 │   ├── Neuron0to2
-│   ├── Neuron0to2_gray_stacks
+│   └── Neuron0to2_gray_stacks
 │       ├── Neuron0to2_1
 │       │   ├── Neuron0to2_h01t01z01c2.tif
 │       │   ├── Neuron0to2_h01t02z01c2.tif
@@ -211,3 +217,37 @@ The Plugin has the following 4 functions:
 └── renameNeuron0to2
 
 ```
+#### Params File: 
+1) The params.csv file could be created in excel before running Organize. 
+2) The .csv file should have 5 columns with the following headers: filename, phase, position_t, position_z, channel, is_gray.
+	- Each column must contain the parameters that are wished to be filled in. For phase and channel, the prefix and number is included. If there is no phase or channel, *Na* is set. For is_gray, either *Yes* or *No* is set.
+	- The following is the params.csv file for Practice > CalciumImaging2 > Neuron3to5
+		  
+			|filename |phase |position_t |position_z |channel |is_gray |
+			|---|---|---|---|---|---|
+			|Neuron3to5 |h01 |3 |7 | c2 |No |
+
+
+### Fluorescence Extraction Organization Example E and F
+1) The “All Spots statistics” (old FIJI version) or "export" (new FIJI version) .csv files from TrackMate should be saved in the following format:
+	- "Mean_Intensity#.csv", where # stands for the number of the z-position where values come from. 
+		- For example, TrackMate “All Spots statistic” or "export" file for z-position 3 should be saved as “Mean_Intensity03.csv”. 
+		- This way, the mean intensity values in each z-position can be tracked by replacing the general MEAN_INTENSITY column names with the file name “Mean_Intensity#” in the merged document.
+
+2) The “Mean_Intensity#.csv” files for each neuron should be saved into a folder labeled “Neuron #”, where # stands for the number of the neuron. 
+	- The first neuron in the set is always “Neuron 0”, the second is “Neuron 1” etc. If running only one neuron, label it "Neuron 0" [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
+
+3) The loop_fluorescence_extraction() code will combine the mean intensity in the “Neuron #” folder into one file, calculate the maximal intensity for each time point and the change in fluorescence (∆F/F<sub>0</sub>) for that neuron, and output them to a “results” folder with the name “Neuron #.csv”
+	- The default creates a folder named “results” in the directory where the “Neuron #” folders reside. 
+		- In [Organization Example D](#organization-example-d), the “results” folder would be created in the “Analysis” folder. 
+		- Within the “results” folder, there are the .csv files with the merged mean intensity and the ∆F/F<sub>0</sub> calculation labeled after each neuron. 
+		- There is also a folder called “Neuron Plots” that will have the output plots for each ∆F/F<sub>0</sub> value.
+	- A “results” folder can also be set to any location by setting the results_folder parameter. 
+
+4) A “Background_list.csv” file must be present in the same folder as the “Neuron #” folders. 
+	- The background_list has a column labeled “Neuron #” for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal to the number of “Mean_Intensity#.csv” files in each neuron folder. The columns must be in numerical order and must not skip values.  
+
+5) Alternatively, you can run one neuron at a time using fluorescence_extraction(). This allows analysis from different folders. 
+	- Instead of a “Background_list.csv”, the values for the background must be entered as a list into the background_averages parameter. 
+	- If analyzing multiple neurons separately that belong to the same group, the output result should be set to a same folder so that the merging code can be easily implemented.
+
