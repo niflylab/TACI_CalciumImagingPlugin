@@ -189,7 +189,7 @@ The Plugin has the following 4 functions:
 #### Params File: 
 1) The params.csv file could be created in excel before running ORGANIZE. 
 2) The .csv file should have 5 columns with the following headers: filename, phase, position_t, position_z, channel, is_gray.
-	- Each column must contain the parameters that are wished to be filled in. For phase and channel, the prefix and number is included. If there is no phase or channel, *Na* is set. For is_gray, either *Yes* or *No* is set.
+	- Each column must contain the parameters that are to be executed. For phase and channel, the prefix and number are included. If there is no phase or channel, *Na* is set. For is_gray, either *Yes* or *No* is set. For t_position and z_position, a number within the range of the files must be chosen. 
 	- A params.csv file is created after running ORGANIZE with the inputs given. If the inputs need to be changed, the params.csv file should be erased or altered to match. 
 	- The following is the params.csv file for Practice > CalciumImaging2 > Neuron3to5
 		  
