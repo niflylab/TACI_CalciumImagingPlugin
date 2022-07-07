@@ -17,11 +17,11 @@ A Plugin for analysis of confocal calcium imaging with sparse cells which are lo
 	- [Params File](#params-file)
 	- [Extract Organization Example E](#merging-organization-example-e)
 		- [Organization Example E](#organization-example-e)
-	- [Extract Organization Example E](#merging-organization-example-e)
-		- [Organization Example E](#organization-example-e)
-	- [Background List File](#background-list-file)
-	- [Merging Organization Example F](#merging-organization-example-f)
+	- [Extract Organization Example F](#merging-organization-example-f)
 		- [Organization Example F](#organization-example-f)
+	- [Background List File](#background-list-file)
+	- [Merging Organization Example G](#merging-organization-example-G)
+		- [Organization Example G](#organization-example-G)
 	
 - [Code Documentation](#code-documentation)
 	- [Sorting](#sorting)
@@ -47,11 +47,11 @@ The Plugin has the following 4 functions:
 - Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. his requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-E).
 - Subtracts the background and finds the maximal value for each timepoint. 
 - Calculates the change in fluorescence (∆F/F<sub>0</sub>) and plots the ∆F/F<sub>0</sub> over time.
-- Outputs the .csv files with the combined data and calculations, and a "Neuron Plots" folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the "results" folder.
+- Outputs the .csv files with the combined data and calculations, and a "Neuron Plots" folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the "results" folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-F).
 - An option to perform Merge is avaialable. 
 
 ***Merge*:**
-- Combines all the ∆F/F<sub>0</sub> values for each neuron in the folder into one file. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section and [Organization Example F](#organization-example-F).
+- Combines all the ∆F/F<sub>0</sub> values for each neuron in the folder into one file. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section and [Organization Example F](#organization-example-G).
 - Calculates the average and SEM of ∆F/F<sub>0</sub> values and plots the average ∆F/F<sub>0</sub> over time.
 - Outputs "merged_data.csv" and "Average_dF_F0.png" into a "merged_data" folder within the "results" folder. 
 
@@ -221,11 +221,12 @@ The Plugin has the following 4 functions:
 1) The params.csv file could be created in excel before running Organize. 
 2) The .csv file should have 5 columns with the following headers: filename, phase, position_t, position_z, channel, is_gray.
 	- Each column must contain the parameters that are wished to be filled in. For phase and channel, the prefix and number is included. If there is no phase or channel, *Na* is set. For is_gray, either *Yes* or *No* is set.
+	- A params.csv file is created after running Organize with the inputs given. If the inputs need to be changed, the params.csv file should be erased or altered to match. 
 	- The following is the params.csv file for Practice > CalciumImaging2 > Neuron3to5
 		  
-			|filename |phase |position_t |position_z |channel |is_gray |
-			|---|---|---|---|---|---|
-			|Neuron3to5 |h01 |3 |7 | c2 |No |
+		|filename |phase |position_t |position_z |channel |is_gray |
+		|---|---|---|---|---|---|
+		|Neuron3to5 |h01 |3 |7 | c2 |No |
 
 
 ### Fluorescence Extraction Organization Example E and F
@@ -237,17 +238,74 @@ The Plugin has the following 4 functions:
 2) The “Mean_Intensity#.csv” files for each neuron should be saved into a folder labeled “Neuron #”, where # stands for the number of the neuron. 
 	- The first neuron in the set is always “Neuron 0”, the second is “Neuron 1” etc. If running only one neuron, label it "Neuron 0" [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
 
-3) The loop_fluorescence_extraction() code will combine the mean intensity in the “Neuron #” folder into one file, calculate the maximal intensity for each time point and the change in fluorescence (∆F/F<sub>0</sub>) for that neuron, and output them to a “results” folder with the name “Neuron #.csv”
-	- The default creates a folder named “results” in the directory where the “Neuron #” folders reside. 
-		- In [Organization Example D](#organization-example-d), the “results” folder would be created in the “Analysis” folder. 
+3) A “Background_list.csv” file must be present in the same folder as the “Neuron #” folders. 
+	- The background_list has a column labeled “Neuron #” for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal to the number of “Mean_Intensity#.csv” files in each neuron folder. If they do not, this will lead to an error.
+	- The columns must be in numerical order and must not skip values. Make sure there is no blank space in the header names before or after. For example " Neuron 0" and "Neuron 0 " will give an error. 
+
+4) The Extract function will combine the "MEAN_INTENSITY" columns of the Mean_Intensity#.csv files in each “Neuron #” folder into one file, subtract the background, calculate the maximum intensity for each time point and the change in fluorescence (∆F/F<sub>0</sub>) for that neuron. These will be saved to a “results” folder with the name “Neuron #.csv”. Additionaly a plot for each neuron will be saved in a "Neuron Plots" folder within the "results" folder.
+	- The “results” folder is created in the directory where the “Neuron #” folders reside. 
+		- In [Organization Example E](#organization-example-e), the “results” folder would be created in the “Analysis” folder. 
 		- Within the “results” folder, there are the .csv files with the merged mean intensity and the ∆F/F<sub>0</sub> calculation labeled after each neuron. 
 		- There is also a folder called “Neuron Plots” that will have the output plots for each ∆F/F<sub>0</sub> value.
-	- A “results” folder can also be set to any location by setting the results_folder parameter. 
+	- One folder, "Neuron 0" can be run if needed. 
 
-4) A “Background_list.csv” file must be present in the same folder as the “Neuron #” folders. 
-	- The background_list has a column labeled “Neuron #” for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal to the number of “Mean_Intensity#.csv” files in each neuron folder. The columns must be in numerical order and must not skip values.  
+#### Organization Example E: 
+##### Set-up for Extract
+``` bash
+├── Analysis
+│   ├── Background_list.csv
+│   ├── Neuron 0
+│   │   ├── Mean_Intensity_01.csv
+│   │   ├── Mean_Intensity_02.csv
+│   │   └── Mean_Intensity_03.csv
+│   ├── Neuron 1
+│   │   ├── Mean_Intensity_04.csv
+│   │   ├── Mean_Intensity_05.csv
+│   │   ├── Mean_Intensity_06.csv
+│   │   └── Mean_Intensity_07.csv
+│   └── Neuron 2
+│       ├── Mean_Intensity_04.csv
+│       ├── Mean_Intensity_05.csv
+│       ├── Mean_Intensity_06.csv
+│       └── Mean_Intensity_07.csv
+├── CalciumImaging1
+├── CalciumImaging2
+└── renameNeuron0to2
+  
+```
+#### Organization Example F: 
+##### After Extract is executed:
+``` bash
+├── Analysis
+│   ├── Background_list.csv
+│   ├── Neuron 0
+│   ├── Neuron 1
+│   ├── Neuron 2
+│   └── results
+│       ├── Neuron 0.csv
+│       ├── Neuron 1.csv
+│       ├── Neuron 2.csv
+│       └── Neuron Plots
+│           ├── Neuron 0.png
+│           ├── Neuron 1.png
+│           └── Neuron 2.png
+├── CalciumImaging1
+├── CalciumImaging2
+└── renameNeuron0to2
+```  
 
-5) Alternatively, you can run one neuron at a time using fluorescence_extraction(). This allows analysis from different folders. 
-	- Instead of a “Background_list.csv”, the values for the background must be entered as a list into the background_averages parameter. 
-	- If analyzing multiple neurons separately that belong to the same group, the output result should be set to a same folder so that the merging code can be easily implemented.
-
+### Background List File
+1) The background values are entered into an excel file that is saved as a "Background_list.csv" in the same directory as the Neuron # folders. 
+2) The excel file should have a column for each neuron labeled as “Neuron #”. Make sure there is no space after the number in the neuron, as the following "Neuron # " will show an error.
+	- Each column must contain the background values for the z-positions being analyzed. 
+	- The number of background values must match the number of “Mean_Intensity#.csv” files in each neuron folder.
+		- For example, in Practice > Analysis, “Neuron 0” has 3 “Mean_Intensity#.csv” files, “Neuron 1” with 4 “Mean_Intensity#.csv”, and “Neuron 2” with 4 “Mean_Intensity#.csv” files. 
+		- The “Background_list.csv” would look like the following. 
+		  
+			|Neuron 0|Neuron 1|Neuron 2|Neuron 3|Neuron 4|Neuron 5|
+			|--------------|---------------|---------------|--------------|---------------|---------------|
+			|1.978       |  1.084       |  1.084       |1.978       |  1.084       |  1.084       |
+			|2.435       |  1.150       |  1.150       |2.435       |  1.150       |  1.150       |
+			|2.335       |  0.430       |  0.430       |2.335       |  0.430       |  0.430       |
+			|            |  0.297       |  0.297       |            |  0.297       |  0.297       |
+ ----------------
