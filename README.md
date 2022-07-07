@@ -59,13 +59,15 @@ The Plugin has the following 4 functions:
 	
 #### RENAME
 
-2) RENAME must be executed if using other confocal microscopes that export .tif files:
+2) RENAME must be executed if the file name does not match Zeiss file structure for .tif files:
 	- The files must be exported as .tif. 
-	- Since the naming systems are different for Nikon, Leica, Zeiss, etc. the rename function is applied, and the filename, prefix, capitalization, digit count, post text, and order within the name of each variable are defined within the name. Then each file is copied and renamed to be compatible with ORGANIZE. As an example, Practice > renameNeuron0to2. These files are exported as *renameNeuron0to2Z#T#ni.tif*. The rename function would create a copy with the following name: *Neuron0to2_r_t#z#.tif*
-		- For the example these are the inputs:
+	- This function needs an input and order for all parts of a name in order to recognize the file. T
+		- The filename, prefix, capitalization, digit count, post text, and order within the name of each variable are defined through the parameters. 
+		- Then each file is copied and renamed to be compatible with ORGANIZE. As an example, Practice > renameNeuron0to2. These files are exported as *renameNeuron0to2Z#T#ni.tif*. The rename function would create a copy with the following name: *Neuron0to2_r_t#z#.tif*. See [Organization Example A](#organization-example-a) and [Organization Example B](#organization-example-b).
+		- To follow this example, these are the inputs for the RENAME function.
 	 	<img width="698" alt="Screen Shot 2022-07-06 at 9 07 23 PM" src="https://user-images.githubusercontent.com/23412608/177667917-d50b90be-5478-4f06-a8ff-f426f7595709.png">
 		
-		- How to input:
+		- RENAME Input Rules:
 			- File name is automatically filled in from the chosen folder. The order most often is "1"
 			- Phase 
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
