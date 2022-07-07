@@ -72,7 +72,7 @@ The Plugin has the following 4 functions:
 			- Phase 
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
 				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text = _**, **parameter value = h01**, **order= 2**.
-				- If there is no Phase, the order is set to "Na"
+				- If there is no Phase, the order is set to **Na**
 			- Max T-Position
 				- The preceding text should include any _ and letter with the correct case.
 				- The parameter value should include all digits. 
@@ -84,7 +84,7 @@ The Plugin has the following 4 functions:
 			- Channel
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
 				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text= _**, **parameter value= c2**, **order= 5**.
-				- If there is no Channel, the order is set to "Na"
+				- If there is no Channel, the order is set to **Na**
 			- Post text 
 				- If after the last variable there is text this should be entered here.
 				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif*, **post text= _ni**. 
