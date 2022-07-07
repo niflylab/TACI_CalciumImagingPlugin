@@ -39,14 +39,14 @@ The Plugin has the following 4 functions:
 - An option to make the .tif gray is available.
 
 ***Extract*:**
-- Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. his requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-E).
+- Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. his requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
 - Subtracts the background and finds the maximal value for each timepoint. 
 - Calculates the change in fluorescence (∆F/F<sub>0</sub>) and plots the ∆F/F<sub>0</sub> over time.
-- Outputs the .csv files with the combined data and calculations, and a "Neuron Plots" folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the "results" folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-F).
+- Outputs the .csv files with the combined data and calculations, and a "Neuron Plots" folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the "results" folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-f).
 - An option to perform Merge is avaialable. 
 
 ***Merge*:**
-- Combines all the ∆F/F<sub>0</sub> values for each neuron in the folder into one file. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section and [Organization Example F](#organization-example-G).
+- Combines all the ∆F/F<sub>0</sub> values for each neuron in the folder into one file. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section and [Organization Example G](#organization-example-g).
 - Calculates the average and SEM of ∆F/F<sub>0</sub> values and plots the average ∆F/F<sub>0</sub> over time.
 - Outputs *merged_data.csv* and *Average_dF_F0.png* into a *merged_data* folder within the *results* folder. 
 
@@ -83,7 +83,7 @@ The Plugin has the following 4 functions:
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
 				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the preceding text input is _ and the parameter value is "c2". The order would be set to 5.
 				- If there is no Channel, the order is set to "Na"
-			-Post text 
+			- Post text 
 				- If after the last variable there is text this should be entered here.
 				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif*, *_ni* should be entered. 
 	 - Note:
@@ -265,7 +265,7 @@ The Plugin has the following 4 functions:
 2) The *Mean_Intensity#.csv* files for each neuron should be saved into a folder labeled *Neuron #*, where # stands for the number of the neuron. 
 	- The first neuron in the set is always *Neuron 0*, the second is *Neuron 1* etc. If running only one neuron, label it *Neuron 0*. [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
 
-3) A *Background_list.csv* file must be present in the same folder as the *Neuron #* folders. [Background List File](#background-list-file) shows an example.
+3) A *Background_list.csv* file must be present in the same folder as the *Neuron #* folders. It is automatically filled in the Plugin [Background List File](#background-list-file) shows an example.
 	- The background_list has a column labeled *Neuron #* for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal to the number of *Mean_Intensity#.csv* files in each neuron folder. If they do not, this will lead to an error.
 	- The columns must be in numerical order and must not skip values. Make sure there is no blank space in the header names before or after. For example " Neuron 0" and "Neuron 0 " will give an error. 
 
@@ -276,6 +276,9 @@ The Plugin has the following 4 functions:
 		- There is also a folder called *Neuron Plots* that will have the output plots for each ∆F/F<sub>0</sub> value.
 	- One folder, *Neuron 0* can be run if needed. 
 5) An option to perform Merge is avaialable. 
+6) An example of the inputs for the example Practice > Analysis folder. 
+
+<img width="696" alt="Screen Shot 2022-07-06 at 9 50 38 PM" src="https://user-images.githubusercontent.com/23412608/177673038-87433dfa-6180-4029-9a2f-c1522730c788.png">
 
 #### Organization Example E: 
 ##### Set-up for Extract
@@ -365,6 +368,9 @@ The Plugin has the following 4 functions:
 1) The Merge function combines all the ∆F/F<sub>0</sub> columns from the *Neuron #.csv* files into one file and renames each column to match the *Neuron #.csv* file it came from. It then calculates the average and SEM of the ∆F/F<sub>0</sub> columns. The file is named *merged_data.csv* and is saved into a new *merged_data* folder within the *results* folder as is shown in [Organization Example G](#organization-example-g).
 2) The code also creates and saves a graph named Average_dF_F0.png which plots the average ∆F/F<sub>0</sub> with the position T into the *merged_data* folder. 
 3) All the *Neuron #.csv* files have to be in the same folder so the ∆F/F<sub>0</sub> of each neuron can be averaged and plotted.
+4) An example Plugin input for the results folder that would be created from Practice > Analysis > results
+
+<img width="696" alt="Screen Shot 2022-07-06 at 9 52 42 PM" src="https://user-images.githubusercontent.com/23412608/177673274-90df9b74-ab58-405e-a9a2-f508e1b6a37b.png">
 
 #### Organization Example G: 
 ##### After merge_data() is executed:
@@ -396,11 +402,26 @@ The Plugin has the following 4 functions:
 ## Troubleshooting
 
 ### Rename
-1) This is case sensitive. Make sure your case is correct.
-2) Include any _ that are present in your name. For example if you name is *Neuron0to2_t01_z01.tif* both t-position and z_position inputs should have an underscore *_t* and *_z*
-3) The number of digits, even if they are just 0's should be indicated for the max value. For example if this file shows the maximum t-position *Neuron0to2_t010_z01.tif*, the value for t_position should be "010". This is common with Nikon naming where there are more digits in the name than the maximum number of files.
-4) The channel and phase preceding text would not include the letter. Both the letter and value should be added into the parameter value column. Preceding text would include something like an underscore.
-5) Make sure that the order set matches the name. 
-6) If there are missing files, the function will skip the files and state that files were missing. 
+1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
+2) This is case sensitive. Make sure your case is correct.
+3) Include any _ that are present in your name. For example if you name is *Neuron0to2_t01_z01.tif* both t-position and z_position inputs should have an underscore *_t* and *_z*
+4) The number of digits, even if they are just 0's should be indicated for the max value. For example if this file shows the maximum t-position *Neuron0to2_t010_z01.tif*, the value for t_position should be "010". This is common with Nikon naming where there are more digits in the name than the maximum number of files.
+5) The channel and phase preceding text would not include the letter. Both the letter and value should be added into the parameter value column. Preceding text would include something like an underscore.
+6) Make sure that the order set matches the name. 
+7) If there are missing files, the function will skip the files and state that files were missing. 
 
 ### Organize
+1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
+2) Make your params.csv is correct.
+3) Make sure you are not missing any files
+
+### Extract
+1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
+2) Make sure to change the Number of Number of T Positions to a value in the range of T Positions of your data.
+3) Make sure the Background_list.csv is correct for this set of data. The number of mean intensity files for each neuron must match the number of values in the corresponding row. 
+4) Make sure there are no spaces before or after "Neuron #". " Neuron #", "Neuron # ", and " Neuron # " will give an error.
+5) Make sure there are no empty values entered.
+
+### Merge
+1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
+2) Make sure to change the Number of Number of T Positions to a value in the range of T Positions of your data.
