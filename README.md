@@ -116,23 +116,9 @@ The Plugin has the following 4 functions:
     ├── renameNeuron0to2Z01T01ni.tif
     ├── renameNeuron0to2Z01T02ni.tif
     ├── renameNeuron0to2Z01T03ni.tif
-    ├── renameNeuron0to2Z02T01ni.tif
-    ├── renameNeuron0to2Z02T02ni.tif
-    ├── renameNeuron0to2Z02T03ni.tif
-    ├── renameNeuron0to2Z03T01ni.tif
-    ├── renameNeuron0to2Z03T02ni.tif
-    ├── renameNeuron0to2Z03T03ni.tif
-    ├── renameNeuron0to2Z04T01ni.tif
-    ├── renameNeuron0to2Z04T02ni.tif
-    ├── renameNeuron0to2Z04T03ni.tif
-    ├── renameNeuron0to2Z05T01ni.tif
-    ├── renameNeuron0to2Z05T02ni.tif
-    ├── renameNeuron0to2Z05T03ni.tif
-    ├── renameNeuron0to2Z06T01ni.tif
-    ├── renameNeuron0to2Z06T02ni.tif
-    ├── renameNeuron0to2Z06T03ni.tif
-    ├── renameNeuron0to2Z07T01ni.tif
-    ├── renameNeuron0to2Z07T02ni.tif
+    ...
+    ...
+    ...
     └── renameNeuron0to2Z07T03ni.tif
 
 ```
@@ -148,23 +134,9 @@ The Plugin has the following 4 functions:
     ├── renameNeuron0to2_r_t01z01.tif
     ├── renameNeuron0to2_r_t01z02.tif
     ├── renameNeuron0to2_r_t01z03.tif
-    ├── renameNeuron0to2_r_t01z04.tif
-    ├── renameNeuron0to2_r_t01z05.tif
-    ├── renameNeuron0to2_r_t01z06.tif
-    ├── renameNeuron0to2_r_t01z07.tif
-    ├── renameNeuron0to2_r_t02z01.tif
-    ├── renameNeuron0to2_r_t02z02.tif
-    ├── renameNeuron0to2_r_t02z03.tif
-    ├── renameNeuron0to2_r_t02z04.tif
-    ├── renameNeuron0to2_r_t02z05.tif
-    ├── renameNeuron0to2_r_t02z06.tif
-    ├── renameNeuron0to2_r_t02z07.tif
-    ├── renameNeuron0to2_r_t03z01.tif
-    ├── renameNeuron0to2_r_t03z02.tif
-    ├── renameNeuron0to2_r_t03z03.tif
-    ├── renameNeuron0to2_r_t03z04.tif
-    ├── renameNeuron0to2_r_t03z05.tif
-    ├── renameNeuron0to2_r_t03z06.tif
+    ...
+    ...
+    ...
     └── renameNeuron0to2_r_t03z07.tif
 
 ```
@@ -178,23 +150,10 @@ The Plugin has the following 4 functions:
 │   	├── Neuron0to2_h01t01z01c2.tif
 │   	├── Neuron0to2_h01t01z02c2.tif
 │   	├── Neuron0to2_h01t01z03c2.tif
-│   	├── Neuron0to2_h01t01z04c2.tif
-│   	├── Neuron0to2_h01t01z05c2.tif
-│   	├── Neuron0to2_h01t01z06c2.tif
-│   	├── Neuron0to2_h01t01z07c2.tif
-│   	├── Neuron0to2_h01t02z01c2.tif
-│   	├── Neuron0to2_h01t02z02c2.tif
-│   	├── Neuron0to2_h01t02z03c2.tif
-│   	├── Neuron0to2_h01t02z04c2.tif
-│   	├── Neuron0to2_h01t02z05c2.tif
-│   	├── Neuron0to2_h01t02z06c2.tif
-│   	├── Neuron0to2_h01t01z07c2.tif
-│   	├── Neuron0to2_h01t03z01c2.tif
-│   	├── Neuron0to2_h01t03z02c2.tif
-│   	├── Neuron0to2_h01t03z03c2.tif
+│   	...
+│  	...
+│   	...
 │   	├── Neuron0to2_h01t03z04c2.tif
-│   	├── Neuron0to2_h01t03z05c2.tif
-│   	├── Neuron0to2_h01t03z06c2.tif
 │       └── Neuron0to2_h01t03z07c2.tif
 ├── CalciumImaging2
 │   ├── Neuron3to5
@@ -216,26 +175,9 @@ The Plugin has the following 4 functions:
 │       │   ├── Neuron0to2_h01t01z01c2.tif
 │       │   ├── Neuron0to2_h01t02z01c2.tif
 │       │   └── Neuron0to2_h01t03z01c2.tif
-│       ├──  Neuron0to2_2
-│       │   ├── Neuron0to2_h01t01z02c2.tif
-│       │   ├── Neuron0to2_h01t02z02c2.tif
-│       │   └── Neuron0to2_h01t03z02c2.tif
-│       ├── Neuron0to2_3
-│       │   ├── Neuron0to2_h01t01z03c2.tif
-│       │   ├── Neuron0to2_h01t02z03c2.tif
-│       │   └── Neuron0to2_h01t03z03c2.tif
-│       ├── Neuron0to2_4
-│       │   ├── Neuron0to2_h01t01z04c2.tif
-│       │   ├── Neuron0to2_h01t02z04c2.tif
-│       │   └── Neuron0to2_h01t03z04c2.tif
-│       ├── Neuron0to2_5
-│       │   ├── Neuron0to2_h01t01z05c2.tif
-│       │   ├── Neuron0to2_h01t02z05c2.tif
-│       │   └── Neuron0to2_h01t03z05c2.tif
-│       ├── Neuron0to2_6
-│       │   ├── Neuron0to2_h01t01z06c2.tif
-│       │   ├── Neuron0to2_h01t02z06c2.tif
-│       │   └── Neuron0to2_h01t03z06c2.tif
+│   	...
+│   	...
+│   	...
 │       └── Neuron0to2_7
 │           ├── Neuron0to2_h01t01z07c2.tif
 │           ├── Neuron0to2_h01t02z07c2.tif
@@ -289,25 +231,9 @@ The Plugin has the following 4 functions:
 │   │   ├── Mean_Intensity_01.csv
 │   │   ├── Mean_Intensity_02.csv
 │   │   └── Mean_Intensity_03.csv
-│   ├── Neuron 1
-│   │   ├── Mean_Intensity_04.csv
-│   │   ├── Mean_Intensity_05.csv
-│   │   ├── Mean_Intensity_06.csv
-│   │   └── Mean_Intensity_07.csv
-│   └── Neuron 2
-│   │   ├── Mean_Intensity_04.csv
-│   │   ├── Mean_Intensity_05.csv
-│   │   ├── Mean_Intensity_06.csv
-│   │   └── Mean_Intensity_07.csv
-│   ├── Neuron 3
-│   │   ├── Mean_Intensity_01.csv
-│   │   ├── Mean_Intensity_02.csv
-│   │   └── Mean_Intensity_03.csv
-│   ├── Neuron 4
-│   │   ├── Mean_Intensity_04.csv
-│   │   ├── Mean_Intensity_05.csv
-│   │   ├── Mean_Intensity_06.csv
-│   │   └── Mean_Intensity_07.csv
+│   │	...
+│   │	...
+│   │	...
 │   └── Neuron 5
 │       ├── Mean_Intensity_04.csv
 │       ├── Mean_Intensity_05.csv
