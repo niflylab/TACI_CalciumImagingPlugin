@@ -1,5 +1,5 @@
 # TACI Calcium Imaging Plugin
-A Plugin for analysis of confocal calcium imaging with sparse cells which are located in multiple z-positions.
+A Plugin in FIJI for analysis of confocal calcium imaging with sparse cells which are located in multiple z-positions.
 
 ---
 
@@ -24,21 +24,21 @@ A Plugin for analysis of confocal calcium imaging with sparse cells which are lo
 		
 ---
 ## Installation
-Download the .jar file. Install the plugin in FIJI (Plugins > Install) and restart FIJI. 
+Download the .jar file from the [google drive](https://drive.google.com/drive/folders/1VR9wqsRkx7tYA0DRfqBKVZKcxL_Awof7?usp=sharing). Install the plugin in FIJI (Plugins > Install) and restart FIJI. 
 
 ## Description
 The Plugin has the following 4 functions:
 
 **RENAME:**
 - Creates a copy of the files and changes the file name to a format compatible with ORGANIZE in a new folder with _r added. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example A](#organization-example-a).
-- An option to perform ORGANIZE simultaneously is available.
+- An option to perform the ORGANIZE function simultaneously is available.
 
 **ORGANIZE:**
-- Makes a copy of the .tif files and sorts them into folders labeled by the z-positions. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example C](#organization-example-c).
+- Makes a copy of the .tif files and sorts them into new folders labeled by the z-positions. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example C](#organization-example-c).
 - An option to make the .tif gray is available.
 
 **EXTRACT:**
-- Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
+- Combines MEAN_INTENSITY values Mean_Intensity#.csv files from each neuron in the folder. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
 - Subtracts the background and finds the maximal value for each time point. 
 - Calculates the change in fluorescence (∆F/F<sub>0</sub>) and plots the ∆F/F<sub>0</sub> over time.
 - Outputs the .csv files with the combined data and calculations, and a "Neuron Plots" folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the "results" folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-f).
@@ -99,13 +99,13 @@ The Plugin has the following 4 functions:
 ├── CalciumImaging1
 ├── CalciumImaging2
 └── renameNeuron0to2
-    ├── renameNeuron0to2Z01T01ni.tif
-    ├── renameNeuron0to2Z01T02ni.tif
-    ├── renameNeuron0to2Z01T03ni.tif
+    ├── renameNeuron0to2_Z01T001ni.tif
+    ├── renameNeuron0to2_Z01T002ni.tif
+    ├── renameNeuron0to2_Z01T003ni.tif
     ...
     ...
     ...
-    └── renameNeuron0to2Z07T03ni.tif
+    └── renameNeuron0to2_Z07T003ni.tif
 
 ```
 #### Organization Example B: 
@@ -117,13 +117,13 @@ The Plugin has the following 4 functions:
 ├── CalciumImaging2
 ├── renameNeuron0to2
 └── renameNeuron0to2_r
-    ├── renameNeuron0to2_r_t01z01.tif
-    ├── renameNeuron0to2_r_t01z02.tif
-    ├── renameNeuron0to2_r_t01z03.tif
+    ├── renameNeuron0to2_r_t001z01.tif
+    ├── renameNeuron0to2_r_t001z02.tif
+    ├── renameNeuron0to2_r_t001z03.tif
     ...
     ...
     ...
-    └── renameNeuron0to2_r_t03z07.tif
+    └── renameNeuron0to2_r_t003z07.tif
 
 ```
 
