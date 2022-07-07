@@ -31,22 +31,22 @@ Download the .jar file. Install the plugin in FIJI (Plugins > Install) and resta
 The Plugin has the following 4 functions:
 
 ***RENAME*:**
-- Creates a copy of the files and changes the file name to a format compatible with ORGANIZE in a new folder with _r added. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example A](#organization-example-a).
+- Creates a copy of the files and changes the file name to a format compatible with ORGANIZE in a new folder with _r added. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example A](#organization-example-a).
 - An option to perform ORGANIZE simultaneously is available.
 
 ***ORGANIZE*:**
-- Makes a copy of the .tif files and sorts them into folders labeled by the z-positions. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example C](#organization-example-c).
+- Makes a copy of the .tif files and sorts them into folders labeled by the z-positions. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example C](#organization-example-c).
 - An option to make the .tif gray is available.
 
 ***EXTRACT*:**
-- Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
-- Subtracts the background and finds the maximal value for each timepoint. 
+- Combines MEAN_INTENSITY values Mean_Intensity#.csv files for each neuron in the folder. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
+- Subtracts the background and finds the maximal value for each time point. 
 - Calculates the change in fluorescence (∆F/F<sub>0</sub>) and plots the ∆F/F<sub>0</sub> over time.
 - Outputs the .csv files with the combined data and calculations, and a "Neuron Plots" folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the "results" folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-f).
-- An option to perform MERGE is avaialable. 
+- An option to perform MERGE is available. 
 
 ***MERGE*:**
-- Combines all the ∆F/F<sub>0</sub> values for each neuron in the folder into one file. This requires specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section and [Organization Example G](#organization-example-g).
+- Combines all the ∆F/F<sub>0</sub> values for each neuron in the folder into one file. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section and [Organization Example G](#organization-example-g).
 - Calculates the average and SEM of ∆F/F<sub>0</sub> values and plots the average ∆F/F<sub>0</sub> over time.
 - Outputs *merged_data.csv* and *Average_dF_F0.png* into a *merged_data* folder within the *results* folder. 
 
@@ -61,7 +61,7 @@ The Plugin has the following 4 functions:
 
 2) RENAME must be executed if using other confocal microscopes that export .tif files:
 	- The files must be exported as .tif. 
-	- Since the naming systems are different for Nikon, Leica, Zeiss etc. the rename function is applied and the filename, prefix, capitalization, digit count, post text, and order within the name of each variable is defined within the name. Then each file is copied and renamed to be compatible with ORGANIZE. As an example, Practice > renameNeuron0to2. These files are exported as *renameNeuron0to2Z#T#ni.tif*. The rename function would create a copy with the folowing name: *Neuron0to2_r_t#z#.tif*
+	- Since the naming systems are different for Nikon, Leica, Zeiss, etc. the rename function is applied, and the filename, prefix, capitalization, digit count, post text, and order within the name of each variable are defined within the name. Then each file is copied and renamed to be compatible with ORGANIZE. As an example, Practice > renameNeuron0to2. These files are exported as *renameNeuron0to2Z#T#ni.tif*. The rename function would create a copy with the following name: *Neuron0to2_r_t#z#.tif*
 		- For the example these are the inputs:
 	 	<img width="698" alt="Screen Shot 2022-07-06 at 9 07 23 PM" src="https://user-images.githubusercontent.com/23412608/177667917-d50b90be-5478-4f06-a8ff-f426f7595709.png">
 		
