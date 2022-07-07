@@ -14,12 +14,11 @@ A Plugin for analysis of confocal calcium imaging with sparse cells which are lo
 	- [Organize Organization Example C and D](#fluorescence-extraction-organization-example-c-and-d)
 		- [Organization Example C](#organization-example-c)
 		- [Organization Example D](#organization-example-d)
-	- [Params File](#params-file)
-	- [Extract Organization Example E](#merging-organization-example-e)
+		- [Params File](#params-file)
+	- [Extract Organization Example E and F](#merging-organization-example-e-and-f)
 		- [Organization Example E](#organization-example-e)
-	- [Extract Organization Example F](#merging-organization-example-f)
 		- [Organization Example F](#organization-example-f)
-	- [Background List File](#background-list-file)
+		- [Background List File](#background-list-file)
 	- [Merging Organization Example G](#merging-organization-example-G)
 		- [Organization Example G](#organization-example-G)
 		
@@ -313,7 +312,7 @@ The Plugin has the following 4 functions:
 └── renameNeuron0to2
 ```  
 
-### Background List File
+#### Background List File
 1) The background values are entered into an excel file that is saved as a "Background_list.csv" in the same directory as the Neuron # folders. 
 2) The excel file should have a column for each neuron labeled as “Neuron #”. Make sure there is no space after the number in the neuron, as the following "Neuron # " will show an error.
 	- Each column must contain the background values for the z-positions being analyzed. 
