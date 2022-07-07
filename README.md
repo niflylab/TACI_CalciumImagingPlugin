@@ -8,10 +8,9 @@ A Plugin for analysis of confocal calcium imaging with sparse cells which are lo
 - [Installation](#installation)
 - [Description](#description)
 - [Input and Output File Organization](#input-and-output-file-organization)
-	- [RENAME Organization Example A and B](#rename-organization-example-a-and-b)
+	- [RENAME and ORGANIZE Organization Example A through D](#rename-and-organize-organization-example-a-through-d)
 		- [Organization Example A](#organization-example-a)	
 		- [Organization Example B](#organization-example-b) 	
-	- [ORGANIZE Organization Example C and D](#organize-organization-example-c-and-d)
 		- [Organization Example C](#organization-example-c)
 		- [Organization Example D](#organization-example-d)
 		- [Params File](#params-file)
@@ -19,8 +18,8 @@ A Plugin for analysis of confocal calcium imaging with sparse cells which are lo
 		- [Organization Example E](#organization-example-e)
 		- [Organization Example F](#organization-example-f)
 		- [Background List File](#background-list-file)
-	- [MERGE Organization Example G](#merge-organization-example-G)
-		- [Organization Example G](#organization-example-G)
+	- [MERGE Organization Example G](#merge-organization-example-g)
+		- [Organization Example G](#organization-example-g)
 - [Troubleshooting](#troubleshooting)
 		
 ---
@@ -51,7 +50,7 @@ The Plugin has the following 4 functions:
 - Outputs *merged_data.csv* and *Average_dF_F0.png* into a *merged_data* folder within the *results* folder. 
 
 ## Input and Output File Organization
-### RENAME and ORGANIZE File Organization Example A-D
+### RENAME and ORGANIZE Organization Example A through D
 
 1) The file folder name must be identical to the beginning of each file name. [Organization Example C](#organization-example-c) shows the input structure necessary. Note, if there is a comma in the name, the files must be renamed to not include one. Alternatively, a params.csv file (see [Params file](#params_file)) could be created to avert this issue. 
 - ORGANIZE uses the Zeiss confocal file structure. Therefore, the files in the folder will have the same name as the folder with *_h#t#z#c#.tif*, (where the # stands for a number) at the end of each file to identify the phase (h#), time point (t#), z-position (z#), and channel (c#) of each file. In order for ORGANIZE to work, the original name of the folder must be kept, or if changed, the file folder name must be identical to the beginning of each file.
