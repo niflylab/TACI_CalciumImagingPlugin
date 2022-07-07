@@ -66,6 +66,7 @@ The Plugin has the following 4 functions:
 		- To follow this example, these are the inputs for the RENAME function.
 	 	<img width="698" alt="Screen Shot 2022-07-06 at 9 07 23 PM" src="https://user-images.githubusercontent.com/23412608/177667917-d50b90be-5478-4f06-a8ff-f426f7595709.png">
 		
+		
 		- RENAME Input Rules:
 			- File name is automatically filled in from the chosen folder. The order most often is "1"
 			- Phase 
@@ -89,22 +90,6 @@ The Plugin has the following 4 functions:
 				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif*, **post text= _ni**. 
 	 - Note:
 		- The inputs are case sensitive. Make sure your case is correct. 
-	- Refer to [Organization Example A](#organization-example-a) for an example of how the files should be structured and [Organization Example B](#organization-example-b) for what the file structure looks like after execution.
-	
-#### ORGANIZE 
-
-3) The files from the original folder are copied and are saved into a new folder labeled with the file name and *_gray_stacks* one directory above (outside of the input folder) such that the original folder is never changed. For the example in Practice > CalciumImaging1 > Neuron0to2:
-	- The folder Neuron0to2 should be chosen from the menu without being entered.
-	- If there is a params.csv file, the parameters are automatically read. (Practice > CalciumImaging2 > Neuron3to5) example and is shown as an example in [Params File](#params-file).
-	- If there are no params.csv file, the phase, t-position, z-position, channel, and whether images are already gray must be indicated.
-		- If there is no phase or channel enter *Na*. There must be a numeric input for t-position and z-position. 
-		- If the *Are Images grey?* box is unchecked parameter a grayscale function is performed on the copies.
-		- After running the ORGANIZE function, a params.csv file will be made, such that future runs have parameters filled in.
-			-If parameters need to be changed, the created params.csv file must be deleted for changes to apply.  	
-	- The output folder *Neuron0to2_gray_stacks* the z-position folders named *Neuron0to2_1*, *Neuron0to2_2* etc. with the sorted gray files.
-	- Refer to [Organization Example C](#organization-example-c) for an example of how the files should be structured and [Organization Example D](#organization-example-d) for what the file structure looks like after execution.
-	- Inputs for Practice > CalciumImaging2 > Neuron3to5 example
-			<img width="698" alt="Screen Shot 2022-07-06 at 9 45 55 PM" src="https://user-images.githubusercontent.com/23412608/177672569-89dcc051-5547-412a-84d7-d4cdb02c5d66.png">
 
 #### Organization Example A: 
 ##### RENAME input example:
@@ -141,6 +126,22 @@ The Plugin has the following 4 functions:
     └── renameNeuron0to2_r_t03z07.tif
 
 ```
+
+#### ORGANIZE 
+
+3) The files from the original folder are copied and are saved into a new folder labeled with the file name and *_gray_stacks* one directory above (outside of the input folder) such that the original folder is never changed. For the example in Practice > CalciumImaging1 > Neuron0to2:
+	- The folder Neuron0to2 should be chosen from the menu without being entered.
+	- If there is a params.csv file, the parameters are automatically read. (Practice > CalciumImaging2 > Neuron3to5) example and is shown as an example in [Params File](#params-file).
+	- If there are no params.csv file, the phase, t-position, z-position, channel, and whether images are already gray must be indicated.
+		- If there is no phase or channel enter *Na*. There must be a numeric input for t-position and z-position. 
+		- If the *Are Images grey?* box is unchecked parameter a grayscale function is performed on the copies.
+		- After running the ORGANIZE function, a params.csv file will be made, such that future runs have parameters filled in.
+			-If parameters need to be changed, the created params.csv file must be deleted for changes to apply.  	
+	- The output folder *Neuron0to2_gray_stacks* the z-position folders named *Neuron0to2_1*, *Neuron0to2_2* etc. with the sorted gray files.
+	- Refer to [Organization Example C](#organization-example-c) for an example of how the files should be structured and [Organization Example D](#organization-example-d) for what the file structure looks like after execution.
+	- Inputs for Practice > CalciumImaging2 > Neuron3to5 example
+			<img width="698" alt="Screen Shot 2022-07-06 at 9 45 55 PM" src="https://user-images.githubusercontent.com/23412608/177672569-89dcc051-5547-412a-84d7-d4cdb02c5d66.png">
+
 #### Organization Example C: 
 ##### Set-up for ORGANIZE:
 
