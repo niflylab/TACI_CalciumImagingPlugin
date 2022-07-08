@@ -24,7 +24,7 @@ A Plugin in FIJI for analysis of confocal calcium imaging with sparse cells whic
 		
 ---
 ## Installation
-Download the .jar file from the [google drive](https://drive.google.com/drive/folders/1VR9wqsRkx7tYA0DRfqBKVZKcxL_Awof7?usp=sharing). Install the plugin in FIJI (Plugins > Install) and restart FIJI. 
+Download the .jar file from the repository. Install the plugin in FIJI (Plugins > Install) and restart FIJI. 
 
 ## Description
 The Plugin has the following 4 functions:
@@ -117,13 +117,13 @@ The Plugin has the following 4 functions:
 ├── CalciumImaging2
 ├── renameNeuron0to2
 └── renameNeuron0to2_r
-    ├── renameNeuron0to2_r_t001z01.tif
-    ├── renameNeuron0to2_r_t001z02.tif
-    ├── renameNeuron0to2_r_t001z03.tif
+    ├── renameNeuron0to2_r_t01z01.tif
+    ├── renameNeuron0to2_r_t01z02.tif
+    ├── renameNeuron0to2_r_t01z03.tif
     ...
     ...
     ...
-    └── renameNeuron0to2_r_t003z07.tif
+    └── renameNeuron0to2_r_t03z07.tif
 
 ```
 
