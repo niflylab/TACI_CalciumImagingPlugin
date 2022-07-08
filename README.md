@@ -24,7 +24,7 @@ A Plugin in FIJI for analysis of confocal calcium imaging with sparse cells whic
 		
 ---
 ## Installation
-Download the .jar file from the repository. Install the plugin in FIJI (Plugins > Install) and restart FIJI. 
+Download the .jar file from the GitHub [releases](https://github.com/niflylab/TACI_CalciumImagingPlugin/releases) page. Install the plugin in FIJI (Plugins > Install) and restart FIJI. 
 
 ## Description
 The Plugin has the following 4 functions:
