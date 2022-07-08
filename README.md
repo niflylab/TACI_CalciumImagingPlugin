@@ -34,8 +34,8 @@ The Plugin has the following 4 functions:
 - An option to perform the ORGANIZE function simultaneously is available.
 
 **ORGANIZE:**
-- Makes a copy of the .tif files and sorts them into new folders labeled by the z-positions. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example C](#organization-example-c).
-- An option to make the .tif gray is available.
+- Makes a copy of the .tif files, turns them gray, and sorts them into new folders labeled by the z-positions. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example C](#organization-example-c).
+- An option to skip the grayscale function is is available.
 
 **EXTRACT:**
 - Combines MEAN_INTENSITY values Mean_Intensity#.csv files from each neuron in the folder. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
@@ -52,7 +52,7 @@ The Plugin has the following 4 functions:
 ## Input and Output File Organization
 ### RENAME and ORGANIZE Organization Example A through D
 
-1) The file folder name must be identical to the beginning of each file name. [Organization Example C](#organization-example-c) shows the input structure necessary. Note, if there is a comma in the name, the files must be renamed to not include one. 
+1) The file folder name must be identical to the beginning of each file name in the folder. [Organization Example C](#organization-example-c) shows the input structure necessary. Note, if there is a comma in the name, the files must be renamed to not include one. 
 - ORGANIZE uses the Zeiss confocal file structure. Therefore, the files in the folder will have the same name as the folder with *_h#t#z#c#.tif*, (where the # stands for a number) at the end of each file to identify the phase (h#), time point (t#), z-position (z#), and channel (c#) of each file. In order for ORGANIZE to work, the original name of the folder must be kept, or if changed, the file folder name must be identical to the beginning of each file.
 	- For example, in the practice folder, files are saved as *Neuron0to2_h#t#z#c#.tif*, so the folder name is *Neuron0to2*.
 	
@@ -71,23 +71,23 @@ The Plugin has the following 4 functions:
 			- File name is automatically filled in from the chosen folder. The order most often is "1"
 			- Phase 
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text = _**, **parameter value = h01**, **order= 2**.
+				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text = _**, **parameter value = h01**, **order= 2**.
 				- If there is no Phase, the order is set to **Na**
 			- Max T-Position
 				- The preceding text should include any _ and letter with the correct case.
 				- The parameter value should include all digits. 
-				-  For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max T-position **preceding text= _t**, **parameter value= 010**, **order= 3**.
+				-  e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max T-position **preceding text= _t**, **parameter value= 010**, **order= 3**.
 			- Max Z-Position
 				- The preceding text should include any _ and letter with the correct case.
 				- The parameter value should include all digits. 
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max Z-position **preceding text= _z**, **parameter value= 07**, **order= 4**.
+				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max Z-position **preceding text= _z**, **parameter value= 07**, **order= 4**.
 			- Channel
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text= _**, **parameter value= c2**, **order= 5**.
+				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text= _**, **parameter value= c2**, **order= 5**.
 				- If there is no Channel, the order is set to **Na**
 			- Post text 
-				- If after the last variable there is text this should be entered here.
-				- For example, in *Neuron0to2_h01_t010_z07_c2_ni.tif*, **post text= _ni**. 
+				- If there is extra text after the Channel variable, enter the text here.
+				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif*, **post text= _ni**. 
 	 - Note:
 		- The inputs are case sensitive. Make sure your case is correct. 
 
@@ -129,17 +129,17 @@ The Plugin has the following 4 functions:
 
 #### ORGANIZE 
 
-3) The files from the original folder are copied and are saved into a new folder labeled with the file name and *_gray_stacks* one directory above (outside of the input folder) such that the original folder is never changed. For the example in Practice > CalciumImaging1 > Neuron0to2:
+3) The files from the original folder are copied and saved into a new folder labeled with the file name and *_gray_stacks* one directory above (outside of the input folder) such that the original folder is never changed. For the example in Practice > CalciumImaging1 > Neuron0to2:
 	- The folder Neuron0to2 should be chosen from the menu without being entered.
 	- If there is a params.csv file, the parameters are automatically read. (Practice > CalciumImaging2 > Neuron3to5) example and is shown as an example in [Params File](#params-file).
 	- If there are no params.csv file, the phase, t-position, z-position, channel, and whether images are already gray must be indicated.
 		- If there is no phase or channel enter *Na*. There must be a numeric input for t-position and z-position. 
-		- If the *Are Images grey?* box is unchecked parameter a grayscale function is performed on the copies.
-		- After running the ORGANIZE function, a params.csv file will be made, such that future runs have parameters filled in.
-			-If parameters need to be changed, the created params.csv file must be deleted for changes to apply.  	
-	- The output folder *Neuron0to2_gray_stacks* the z-position folders named *Neuron0to2_1*, *Neuron0to2_2* etc. with the sorted gray files.
+		- If the *Are Images gray?* box is unchecked a grayscale function is performed on the copies.
+		- After running the ORGANIZE function, a params.csv file will be generated, such that future runs have parameters filled in.
+			-If parameters need to be changed, the existing params.csv file must be deleted for changes to apply. Alternatively, the params.csv could be edited directly to reflect the changes.
+	- In the output folder *Neuron0to2_gray_stacks* the z-position folders named *Neuron0to2_1*, *Neuron0to2_2* etc. with the sorted gray files.
 	- Refer to [Organization Example C](#organization-example-c) for an example of how the files should be structured and [Organization Example D](#organization-example-d) for what the file structure looks like after execution.
-	- Inputs for Practice > CalciumImaging2 > Neuron3to5 example
+	- The following is the input example for Practice > CalciumImaging2 > Neuron3to5.
 			<img width="698" alt="Screen Shot 2022-07-06 at 9 45 55 PM" src="https://user-images.githubusercontent.com/23412608/177672569-89dcc051-5547-412a-84d7-d4cdb02c5d66.png">
 
 #### Organization Example C: 
@@ -209,19 +209,16 @@ The Plugin has the following 4 functions:
 2) The *Mean_Intensity#.csv* files for each neuron should be saved into a folder labeled *Neuron #*, where # stands for the number of the neuron. 
 	- The first neuron in the set is always *Neuron 0*, the second is *Neuron 1*, etc. If running only one neuron, label it *Neuron 0*. [Organization Example E](#organization-example-e) and [Organization Example F](#organization-example-f) show an example of folder organization before and after execution respectively.
 
-3) A *Background_list.csv* file must be present in the same folder as the *Neuron #* folders. It is automatically filled in the Plugin [Background List File](#background-list-file) shows an example.
-	- The background_list has a column labeled *Neuron #* for each neuron and must have the background values for each z-positions. The number of z-positions for each neuron must equal the number of *Mean_Intensity#.csv* files in each neuron folder. If they do not, this will lead to an error.
-	- The columns must be in numerical order and must not skip values. Make sure there is no blank space in the header names before or after. For example " Neuron 0" and "Neuron 0 " will give an error. 
+3) A *Background_list.csv* file must be present in the same folder as the *Neuron #* folders. It is automatically filled in the Plugin. See example in  [Background List File](#background-list-file) 
 
-4) The EXTRACT function will combine the *MEAN_INTENSITY* columns of the Mean_Intensity#.csv files in each *Neuron #* folder into one file, subtract the background, and calculate the maximum intensity for each time point as well as the change in fluorescence (∆F/F<sub>0</sub>) for that neuron. These will be saved to a *results* folder with the name *Neuron #.csv*. Additionally, a plot for each neuron will be saved in a *Neuron Plots* folder within the *results* folder.
+4) The EXTRACT function will combine the *MEAN_INTENSITY* columns of the Mean_Intensity#.csv files in each *Neuron #* folder into one file, subtract the background, calculate the maximum intensity and the change of fluorescence  (∆F/F0) over time for each individual neurons. Results will be saved to a *results* folder with the name *Neuron #.csv*. Plots for each neuron will be saved in *Neuron Plots* under the *results* folder.
 	- The *results* folder is created in the directory where the *Neuron #* folders reside. 
 		- In [Organization Example E](#organization-example-e), the *results* folder would be created in the *Analysis* folder. 
 		- Within the *results* folder, there are the .csv files with the merged mean intensity and the ∆F/F<sub>0</sub> calculation labeled after each neuron. 
 		- There is also a folder called *Neuron Plots* that will have the output plots for each ∆F/F<sub>0</sub> value.
 	- One folder, *Neuron 0* can be run if needed. 
 5) An option to perform MERGE is available. 
-6) An example of the inputs for the example Practice > Analysis folder. 
-
+6) The following is the input example for Practice > Analysis.
 <img width="696" alt="Screen Shot 2022-07-06 at 9 50 38 PM" src="https://user-images.githubusercontent.com/23412608/177673038-87433dfa-6180-4029-9a2f-c1522730c788.png">
 
 #### Organization Example E: 
@@ -293,10 +290,10 @@ The Plugin has the following 4 functions:
  ----------------
 
 ### MERGE Organization Example G
-1) The MERGE function combines all the ∆F/F<sub>0</sub> columns from the *Neuron #.csv* files into one file and renames each column to match the *Neuron #.csv* file it came from. It then calculates the average and SEM of the ∆F/F<sub>0</sub> columns. The file is named *merged_data.csv* and is saved into a new *merged_data* folder within the *results* folder as is shown in [Organization Example G](#organization-example-g).
-2) The code also creates and saves a graph named Average_dF_F0.png which plots the average ∆F/F<sub>0</sub> with the position T into the *merged_data* folder. 
+1) The MERGE function combines all the ∆F/F<sub>0</sub> columns from the *Neuron #.csv* files into one file and renames each column to match the *Neuron #.csv* file where it came from. It then calculates the average and SEM of the ∆F/F<sub>0</sub> columns. The file is named *merged_data.csv* and is saved into a new *merged_data* folder under the *results* folder as is shown in [Organization Example G](#organization-example-g).
+2) This function also generates a graph named Average_dF_F0.png which plots the average ∆F/F<sub>0</sub> of all neurons over time in the *merged_data* folder. 
 3) All the *Neuron #.csv* files have to be in the same folder so the ∆F/F<sub>0</sub> of each neuron can be averaged and plotted.
-4) An example Plugin input for the results folder that would be created from Practice > Analysis > results
+4) The following is a Plugin input example for the results folder that would be created from Practice > Analysis > results
 
 <img width="696" alt="Screen Shot 2022-07-06 at 9 52 42 PM" src="https://user-images.githubusercontent.com/23412608/177673274-90df9b74-ab58-405e-a9a2-f508e1b6a37b.png">
 
@@ -332,7 +329,7 @@ The Plugin has the following 4 functions:
 ### RENAME
 1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within it's enclosing folder.
 2) Make sure there is no comma in the file name. 
-3) This is case sensitive. Make sure your case is correct.
+3) This analysis is case sensitive. Make sure your case is correct.
 4) Include any _ that are present in your name. For example if you name is *Neuron0to2_t01_z01.tif* both t-position and z_position inputs should have an underscore *_t* and *_z*
 5) The number of digits, even if they are just 0's should be indicated for the max value. For example if this file shows the maximum t-position *Neuron0to2_t010_z01.tif*, the value for t_position should be "010". This is common with Nikon naming where there are more digits in the name than the maximum number of files.
 6) The channel and phase preceding text would not include the letter. Both the letter and value should be added into the parameter value column. Preceding text would include something like an underscore.
@@ -342,7 +339,7 @@ The Plugin has the following 4 functions:
 ### ORGANIZE
 1) Make sure you choose the correct folder. Do not enter the folder when choosing it. Just highlight it within its enclosing folder.
 2) Make sure there is no comma in the name. If there is, either edit or make a params.csv file with the correct filename and proper parameters.
-3) Make your params.csv is correct.
+3) Make sure your params.csv is correct.
 4) Make sure you are not missing any files.
 
 ### EXTRACT
