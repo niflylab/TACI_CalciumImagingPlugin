@@ -345,9 +345,10 @@ The Plugin has the following 4 functions:
 ### EXTRACT
 1) Make sure to choose the correct folder. Do not enter the folder when choosing it. Just highlight it within its enclosing folder.
 2) Make sure to change the Number of T Positions to the maximum value of t positions in your data.
-3) Make sure the Background_list.csv is correct for this set of data. The number of mean intensity files for each neuron must match the number of values for corresponding neurons. 
+3) Make sure the *Background_list.csv* is correct for this set of data. The number of mean intensity files for each neuron must match the number of values for corresponding neurons. 
 4) Make sure there are no spaces before or after "Neuron #". " Neuron #", "Neuron # ", and " Neuron # " will give an error.
 5) Make sure there are no empty values entered.
+6) Make sure the non-header cells in the *Background_list.csv* are formatted to numerical. Sometimes when values are copied and they do not have decimal points, they are not recognized as numbers under the cell format. This causes an error. 
 
 ### MERGE
 1) Make sure to choose the correct folder. Do not enter the folder when choosing it. Just highlight it within its enclosing folder.
