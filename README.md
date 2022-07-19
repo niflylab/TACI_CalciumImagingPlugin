@@ -39,7 +39,7 @@ The Plugin has the following 4 functions:
 
 **EXTRACT:**
 - Combines MEAN_INTENSITY values *Mean_Intensity#.csv* files from each neuron in the folder and outputs the *POSITION_T*.csv file in the *python_files* folder. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example E](#organization-example-e).
-- Subtracts the background, and finds the maximal value for each time point, and outputs *Neuron#_subtracted_averages.csv* and *Neuron#_max_value.csv* in the *python_files* folder. 
+- Subtracts the background, and finds the maximal value for each time point, and outputs *Neuron #_subtracted_averages.csv* and *Neuron #_max_value.csv* in the *python_files* folder. 
 - Calculates the change in fluorescence (∆F/F<sub>0</sub>) and plots the ∆F/F<sub>0</sub> over time.
 - Outputs the .csv files with the combined data and calculations, and a *Neuron Plots* folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the *results* folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-f).
 - An option to perform MERGE is available. 
@@ -71,19 +71,19 @@ The Plugin has the following 4 functions:
 			- File name is automatically filled in from the chosen folder. The order most often is "1"
 			- Phase 
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
-				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text = _**, **parameter value = h01**, **order= 2**.
+				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text = _**, **parameter value = h01**, **order = 2**.
 				- If there is no Phase, the order is set to **Na**
 			- Max T-Position
 				- The preceding text should include any _ and letter with the correct case.
 				- The parameter value should include all digits. 
-				-  e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max T-position **preceding text= _t**, **parameter value= 010**, **order= 3**.
+				-  e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max T-position **preceding text= _t**, **parameter value = 010**, **order = 3**.
 			- Max Z-Position
 				- The preceding text should include any _ and letter with the correct case.
 				- The parameter value should include all digits. 
 				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the Max Z-position **preceding text= _z**, **parameter value= 07**, **order= 4**.
 			- Channel
 				- The preceding text would include an _ and the parameter value should contain both the letter and number. 
-				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text= _**, **parameter value= c2**, **order= 5**.
+				- e.g. in *Neuron0to2_h01_t010_z07_c2_ni.tif* the **preceding text = _**, **parameter value = c2**, **order = 5**.
 				- If there is no Channel, the order is set to **Na**
 			- Post text 
 				- If there is extra text after the Channel variable, enter the text here.
@@ -134,9 +134,9 @@ The Plugin has the following 4 functions:
 	- If there is a *params.csv* file, the parameters are automatically read. (Practice > CalciumImaging2 > Neuron3to5) example and is shown as an example in [Params File](#params-file).
 	- If there are no *params.csv* file, the phase, t-position, z-position, channel, and whether images are already gray must be indicated.
 		- If there is no phase or channel enter *Na*. There must be a numeric input for t-position and z-position. 
-		- If the *Are Images gray?* box is unchecked a grayscale function is performed on the copies.
+		- If the *Are images gray?* box is unchecked a grayscale function is performed on the copies.
 		- After running the ORGANIZE function, a *params.csv* file will be generated, such that future runs have parameters filled in.
-			-If parameters need to be changed, the existing params.csv file must be deleted for changes to apply. Alternatively, the *params.csv* could be edited directly to reflect the changes.
+			 If parameters need to be changed, the existing *params.csv* file must be deleted for changes to apply. Alternatively, the *params.csv* could be edited directly to reflect the changes.
 	- In the output folder *Neuron0to2_gray_stacks* the z-position folders named *Neuron0to2_1*, *Neuron0to2_2* etc. with the sorted gray files.
 	- Refer to [Organization Example C](#organization-example-c) for an example of how the files should be structured and [Organization Example D](#organization-example-d) for what the file structure looks like after execution.
 	- The following is the input example for Practice > CalciumImaging2 > Neuron3to5.
@@ -202,7 +202,7 @@ The Plugin has the following 4 functions:
 
 ### EXTRACT Organization Example E and F
 1) The *All Spots statistics* (old FIJI version) or *export* (new FIJI version) .csv files from TrackMate should be saved in the following format:
-	- *Mean_Intensity#.csv* # stands for the number of the z-position where values come from. 
+	- *Mean_Intensity#.csv* stands for the number of the z-position where values come from. 
 		- For example, TrackMate *All Spots statistic* or *export* file for z-position 3 should be saved as *Mean_Intensity03.csv*. 
 		- This way, the mean intensity values in each z-position can be tracked by replacing the general *MEAN_INTENSITY* or *MEAN_INTENSITY_CH1* column names with the file name *Mean_Intensity#* in the merged document.
 
@@ -227,17 +227,17 @@ The Plugin has the following 4 functions:
 ├── Analysis
 │   ├── Background_list.csv
 │   ├── Neuron 0
-│   │   ├── Mean_Intensity_01.csv
-│   │   ├── Mean_Intensity_02.csv
-│   │   └── Mean_Intensity_03.csv
+│   │   ├── Mean_Intensity01.csv
+│   │   ├── Mean_Intensity02.csv
+│   │   └── Mean_Intensity03.csv
 │   │	...
 │   │	...
 │   │	...
 │   └── Neuron 5
-│       ├── Mean_Intensity_04.csv
-│       ├── Mean_Intensity_05.csv
-│       ├── Mean_Intensity_06.csv
-│       └── Mean_Intensity_07.csv
+│       ├── Mean_Intensity04.csv
+│       ├── Mean_Intensity05.csv
+│       ├── Mean_Intensity06.csv
+│       └── Mean_Intensity07.csv
 ├── CalciumImaging1
 ├── CalciumImaging2
 └── renameNeuron0to2
