@@ -42,12 +42,14 @@ The Plugin has the following 4 functions:
 - Subtracts the background, and finds the maximal value for each time point, and outputs *Neuron#_subtracted_averages.csv* and *Neuron#_max_value.csv* in the *python_files* folder. 
 - Calculates the change in fluorescence (∆F/F<sub>0</sub>) and plots the ∆F/F<sub>0</sub> over time.
 - Outputs the .csv files with the combined data and calculations, and a *Neuron Plots* folder containing the plots of the ∆F/F<sub>0</sub> as .png files into the *results* folder. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section [Organization Example F](#organization-example-f).
-- An option to perform MERGE is available. 
+- An option to perform MERGE is available.
+- A Python version is available: https://github.com/hbai521/calcium_imaging/ 
 
 **MERGE:**
 - Combines all the ∆F/F<sub>0</sub> values for each neuron in the folder into one file. This requires a specific file structure as an input. Refer to the [Input and Output File Organization](#input-and-output-file-organization) section and [Organization Example G](#organization-example-g).
 - Calculates the average and SEM of ∆F/F<sub>0</sub> values and plots the average ∆F/F<sub>0</sub> over time.
-- Outputs *merged_data.csv* and *Average_dF_F0.png* into a *merged_data* folder within the *results* folder. 
+- Outputs *merged_data.csv* and *Average_dF_F0.png* into a *merged_data* folder within the *results* folder.
+- A Python version is available: https://github.com/hbai521/calcium_imaging/ 
 
 ## Input and Output File Organization
 ### RENAME and ORGANIZE Organization Example A through D
